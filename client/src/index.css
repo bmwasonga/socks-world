@@ -21,3 +21,12 @@ code {
 .nav-link {
   color: black !important;
 }
+
+.flex-container {
+  display: flex !important;
+}
+
+.select {
+  box-shadow: none !important;
+  border-color: black;
+}

@@ -1,4 +1,4 @@
-export const socks = [
+const socks = [
   {
     name: 'BLACK, GREEN DOTTED',
     sizes: ['small', 'medium'],
@@ -55,7 +55,7 @@ export const socks = [
       'blue polka dots and a blue base bottom. Has orange stripes at the knee level for easy spotting. just like Waldo',
   },
   {
-    name: 'Orange Brown',
+    name: 'ORANGE BROWN',
     sizes: ['small', 'medium'],
     prices: [
       {
@@ -69,7 +69,7 @@ export const socks = [
       'A perfect combination of brown and orange with  a grey bottom for perfect color combination',
   },
   {
-    name: 'Color Rise',
+    name: 'COLOR RISE',
     sizes: ['small', 'medium'],
     prices: [
       {
@@ -149,3 +149,5 @@ export const socks = [
     description: 'the higher you go, the cooler it becomes.',
   },
 ];
+
+export default socks;
