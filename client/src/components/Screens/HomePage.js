@@ -9,7 +9,7 @@ export default function HomePage() {
         <div className="row">
           {socks.map((sock) => {
             return (
-              <div className="col-md-4 p-30">
+              <div className="col-md-4 d-flex justify-content-center">
                 <div className="m-3">
                   <Socks sock={sock} />
                 </div>

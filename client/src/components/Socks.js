@@ -12,7 +12,10 @@ export default function Socks({ sock }) {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="shadow p-3 mb-5 bg-white rounded">
+    <div
+      style={{ padding: '40px' }}
+      className="shadow p-5 mb-5 bg-white rounded "
+    >
       {/* add a hover option to increase the intensity of the shadow on hover*/}
       <div onClick={handleShow}>
         <h3>{sock.name}</h3>
