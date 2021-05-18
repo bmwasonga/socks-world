@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllSocks } from '../../actions/socksActions';
 import Socks from '../Socks';
 import socks from '../utils/SocksData';
 
 export default function HomePage() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllSocks());
+  }, []);
   return (
     <>
       <div>
