@@ -1,4 +1,6 @@
 const express = require('express');
+var db = require('./db'); //this imports the entry point of the Mongodb connection
+
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -6,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('the server is working ');
+  res.status(200).send('<h1>The server is running </h1>');
 });
 
 app.listen(port, () => {
