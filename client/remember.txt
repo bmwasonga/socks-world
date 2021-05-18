@@ -1,0 +1,1 @@
+in the package.json, I have included the proxy that has been used on the server side
