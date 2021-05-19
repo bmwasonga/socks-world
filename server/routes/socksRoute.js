@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 //import the socks mmodel
-const socks = require('../model/socksModel');
+const Socks = require('../model/socksModel');
 
 router.get('/getallsocks', async (req, res) => {
   try {

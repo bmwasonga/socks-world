@@ -3,7 +3,7 @@ var db = require('./db'); //this imports the entry point of the Mongodb connecti
 
 const port = process.env.PORT || 5000;
 
-//using the modal that we have created above
+//using the model that we have created above
 const Socks = require('./model/socksModel');
 
 //import the Route of the socks as exported from the route folder
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 //to utilise the SocksRoute that has  been imported from
-app.use('/api/socks/getallsocks', socksRoute);
+app.use('/api/socks/', socksRoute);
 
 app.listen(port, () => {
   console.log(`the server is liste ning on port: ${port}`);
