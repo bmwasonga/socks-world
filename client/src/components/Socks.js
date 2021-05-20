@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../actions/cartActions';
 
 export default function Socks({ sock }) {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState('small');
-  // the below functions control the show and hide status of the modal component that displays more information on the socks
-
+  //useEffect for the Modal
   const [show, setShow] = useState(false);
 
+  // the below functions control the show and hide status of the modal component that displays more information on the socks
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  //code below handles the functionality of adding items to the cart
+  const dispatch = useDispatch();
+  function addItemToCart() {
+    dispatch(addToCart(sock, size, quantity));
+  }
   return (
     <div
       style={{ padding: '40px' }}
@@ -56,7 +63,11 @@ export default function Socks({ sock }) {
           <p className="mt-1">Price: {sock.prices[0][size] * quantity}Ksh</p>
         </div>
         <div className="m-1 w-100">
-          <button type="button" className="btn btn-danger mt-1">
+          <button
+            type="button"
+            className="btn btn-danger mt-1"
+            onclick={addItemToCart}
+          >
             Add to cart
           </button>
         </div>
