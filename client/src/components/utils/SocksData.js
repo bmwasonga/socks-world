@@ -1,5 +1,6 @@
 const socks = [
   {
+    id: '1',
     name: 'BLACK, GREEN DOTTED',
     sizes: ['small', 'medium'],
     prices: [
@@ -13,6 +14,7 @@ const socks = [
     description: 'black happy socks socks with green polka dots',
   },
   {
+    id: '2',
     name: 'RAINBOW FOOT - GREEN',
     sizes: ['small', 'medium'],
     prices: [
@@ -27,6 +29,7 @@ const socks = [
       'Perfect color matched socks idel for any type of official wear with dominant green color',
   },
   {
+    id: '3',
     name: 'RAINBOW FOOT - YELLOW',
     sizes: ['small', 'medium'],
     prices: [
@@ -41,6 +44,7 @@ const socks = [
       'Perfect color matched socks with a dash of yellow that dims the other colors. Ideal for all ocassions',
   },
   {
+    id: '4',
     name: 'POLKA WALDO',
     sizes: ['small', 'medium'],
     prices: [
@@ -55,6 +59,7 @@ const socks = [
       'blue polka dots and a blue base bottom. Has orange stripes at the knee level for easy spotting. just like Waldo',
   },
   {
+    id: '5',
     name: 'ORANGE BROWN',
     sizes: ['small', 'medium'],
     prices: [
@@ -69,6 +74,7 @@ const socks = [
       'A perfect combination of brown and orange with  a grey bottom for perfect color combination',
   },
   {
+    id: '6',
     name: 'COLOR RISE',
     sizes: ['small', 'medium'],
     prices: [
@@ -82,6 +88,7 @@ const socks = [
     description: 'Black bottom with colors that rise and make a statement',
   },
   {
+    id: '7',
     name: 'CRAYONS',
     sizes: ['small', 'medium'],
     prices: [
@@ -95,6 +102,7 @@ const socks = [
     description: 'A fantasy and vivid explosion of colors',
   },
   {
+    id: '8',
     name: 'UPSIGHT',
     sizes: ['small', 'medium'],
     prices: [
@@ -109,6 +117,7 @@ const socks = [
       'You only get to show as much color as you want depending on how you sit. This pair will complement all your official clothes',
   },
   {
+    id: '9',
     name: 'RED-FLOWER',
     sizes: ['small', 'medium'],
     prices: [
@@ -122,6 +131,7 @@ const socks = [
     description: 'Red flower. The name itself says it all',
   },
   {
+    id: '10',
     name: 'THUNDER-FORCES',
     sizes: ['small', 'medium'],
     prices: [
@@ -136,6 +146,7 @@ const socks = [
       'With a fiesty red bottom and blue and yellow thunder spots that just give the right ammount of detail and pazaz',
   },
   {
+    id: '11',
     name: 'ALTITUDE',
     sizes: ['small', 'medium'],
     prices: [
