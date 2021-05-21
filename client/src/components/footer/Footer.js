@@ -10,9 +10,8 @@ function Footer() {
           href="https://www.instagram.com/thesocks_basket/"
           target="_blank"
           rel="noreferrer"
-          className="text-primary"
+          className="nav-link"
         >
-          {' '}
           the_socks_basket
           <FaInstagram />
         </a>

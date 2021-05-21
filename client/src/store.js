@@ -14,8 +14,20 @@ const finalReducer = combineReducers({
 
 const middleware = [thunk];
 
+//preference of session storage for the data.
+const cartItems = sessionStorage.getItem('cartItems')
+  ? JSON.parse(sessionStorage.getItem('cartItems'))
+  : [];
+
+const initialState = {
+  cartReducer: {
+    cartItems: cartItems,
+  },
+};
+
 const store = createStore(
   finalReducer,
+  initialState,
   composeWithDevTools(compose(applyMiddleware(...middleware)))
 );
 

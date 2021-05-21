@@ -17,6 +17,7 @@ export default function Socks({ sock }) {
   const dispatch = useDispatch();
   function addItemToCart() {
     dispatch(addToCart(sock, size, quantity));
+    // the params in the same order from the Add to Cart function in the cart actions
   }
   return (
     <div
@@ -66,7 +67,7 @@ export default function Socks({ sock }) {
           <button
             type="button"
             className="btn btn-danger mt-1"
-            onclick={addItemToCart}
+            onClick={addItemToCart}
           >
             Add to cart
           </button>

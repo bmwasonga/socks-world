@@ -1,4 +1,6 @@
 export const cartReducer = (state = { cartItems: [] }, action) => {
+  //local storage funcionality
+
   switch (action.type) {
     case 'ADD_TO_CART':
       return {

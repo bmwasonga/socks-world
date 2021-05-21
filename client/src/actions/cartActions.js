@@ -1,4 +1,4 @@
-export const addToCart = (sock, size, quantity) => (dispatch) => {
+export const addToCart = (sock, size, quantity) => (dispatch, getState) => {
   let cartItem = {
     name: sock.name,
     id: sock._id,
@@ -6,10 +6,14 @@ export const addToCart = (sock, size, quantity) => (dispatch) => {
     size: size,
     quantity: quantity,
     prices: sock.prices,
-    price: sock.prices[0] * quantity,
+    price: sock.prices[0][size] * quantity,
   };
 
   dispatch({ type: 'ADD_TO_CART', payload: cartItem });
+
+  const cartItems = getState().cartReducer.cartItems;
+
+  sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
 
-//the params will be used to calculate the total ammount on checkout
+//the params above will be used to calculate the total ammount on checkout

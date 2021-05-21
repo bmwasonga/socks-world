@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { BiCart } from 'react-icons/bi';
 
 export default function Navbar() {
   //to access the state of the cart button
@@ -21,21 +22,20 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          Ben {cartState.cartItems.length}
+          <BiCart /> {cartState.cartItems.length}
           {/* This is what apears on small screens   */}
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item ">
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/login">
                 {/* the href will change to that of the login page */}
                 Login
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
-                {/* the href will change to that of the cart page*/}
+              <a className="nav-link" href="/cart">
                 Cart {cartState.cartItems.length}
               </a>
             </li>
