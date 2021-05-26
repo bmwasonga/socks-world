@@ -6,6 +6,7 @@ import HomePage from './components/Screens/HomePage';
 import Footer from './components/footer/Footer';
 import Cart from './components/Screens/Cart';
 import Login from './components/Screens/Login';
+import Register from './components/Screens/Register';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/cart" exact component={Cart} />
         <Route path="/login" exact component={Login} />
+        <Route path="/register" exact component={Register} />
       </Router>
       <Footer />
     </div>

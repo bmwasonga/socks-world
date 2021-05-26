@@ -5,11 +5,14 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { getAllSocksReducers } from '../src/reducers/socksReducers';
 import { cartReducer } from './reducers/cartReducers';
+import { registerUserReducer } from './reducers/userReducers';
 
 const finalReducer = combineReducers({
   getAllSocksReducers: getAllSocksReducers,
   //the cartReducer
   cartReducer: cartReducer,
+  //registed user reducers
+  registerUserReducer: registerUserReducer,
 });
 
 const middleware = [thunk];
