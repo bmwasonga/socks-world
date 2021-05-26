@@ -1,18 +1,24 @@
 export const addToCart = (sock, size, quantity) => (dispatch, getState) => {
   let cartItem = {
     name: sock.name,
-    id: sock._id,
+    _id: sock._id,
     image: sock.image,
     size: size,
-    quantity: quantity,
+    quantity: Number(quantity),
     prices: sock.prices,
     price: sock.prices[0][size] * quantity,
   };
 
-  dispatch({ type: 'ADD_TO_CART', payload: cartItem });
+  //alert fro more than 10 iems and
+  if (cartItem.quantity > 10) {
+    alert('You cannot buy more than 10 pieces of an item');
+  } else if (cartItem.quantity <= 0) {
+    dispatch({ type: 'DELETE_FROM_CART', payload: sock });
+  } else {
+    dispatch({ type: 'ADD_TO_CART', payload: cartItem });
+  }
 
   const cartItems = getState().cartReducer.cartItems;
-
   sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
 
@@ -22,3 +28,5 @@ export const deleteFromCart = (sock) => (dispatch, getState) => {
   const cartItems = getState().cartReducer.cartItems;
   sessionStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
+
+//the above will bw used to delete items entirely from the cart

@@ -10,6 +10,8 @@ import { addToCart, deleteFromCart } from '../../actions/cartActions';
 export default function Cart() {
   const cartSate = useSelector((state) => state.cartReducer);
   const cartItems = cartSate.cartItems;
+  //to calculate the grand total of the items in the cart
+  let grandTotal = cartItems.reduce((x, item) => x + item.price, 0);
 
   //dispatch the add and reduce to cart cartActions
   const dispatch = useDispatch();
@@ -49,14 +51,14 @@ export default function Cart() {
                   </h5>
                   <hr />
                 </div>
-                <div className="m-1 ">
+                <div className="m-1 w-50">
                   <img
                     src={item.image}
                     alt={item.name}
                     style={{ height: '80px', width: '80px' }}
                   />
                 </div>
-                <div className="w-10 mt-4">
+                <div className=" m-1 w-100 mt-4">
                   <AiFillDelete
                     color="red"
                     onClick={() => {
@@ -68,7 +70,10 @@ export default function Cart() {
             );
           })}
         </div>
-        <div className="">this should appear on the side</div>
+        <div className="col-md-4">
+          <h4>SUBTOTAL : {grandTotal} Ksh</h4>
+          <button className="btn btn-primary">Pay now</button>
+        </div>
       </div>
     </div>
   );
