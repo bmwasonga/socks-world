@@ -8,6 +8,8 @@ const Socks = require('./model/socksModel');
 
 //import the Route of the socks as exported from the route folder
 const socksRoute = require('./routes/socksRoute');
+//import the User of the socks as exported from the route folder
+const userRoute = require('./routes/userRoute');
 
 //rest of code
 const app = express();
@@ -20,6 +22,8 @@ app.get('/', (req, res) => {
 
 //to utilise the SocksRoute that has  been imported from
 app.use('/api/socks/', socksRoute);
+//to utilise the Userroute that has been imported
+app.use('/api/user', userRoute);
 
 app.listen(port, () => {
   console.log(`the server is liste ning on port: ${port}`);
