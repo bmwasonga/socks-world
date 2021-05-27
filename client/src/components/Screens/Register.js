@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser } from '../../actions/userActions';
 
 export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cpassword, setCpassword] = useState('');
+
+  const dispatch = useDispatch();
 
   //function that accepts registration and
   function register() {
@@ -17,7 +21,8 @@ export default function Register() {
         email: email,
         password: password,
       };
-      console.log('the user is: ', user);
+      console.log(user);
+      dispatch(registerUser(user));
     }
   }
 
@@ -83,7 +88,7 @@ export default function Register() {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" onClick={register}>
+            <Button variant="primary" onClick={register}>
               Register
             </Button>
             <br />

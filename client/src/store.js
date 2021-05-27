@@ -11,7 +11,7 @@ const finalReducer = combineReducers({
   getAllSocksReducers: getAllSocksReducers,
   //the cartReducer
   cartReducer: cartReducer,
-  //registed user reducers
+  //registerd user reducers
   registerUserReducer: registerUserReducer,
 });
 
