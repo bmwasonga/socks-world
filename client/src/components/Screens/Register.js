@@ -17,9 +17,9 @@ export default function Register() {
       alert('Passwords do not match');
     } else {
       const user = {
-        name: name,
-        email: email,
-        password: password,
+        name,
+        email,
+        password,
       };
       console.log(user);
       dispatch(registerUser(user));
