@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 //to utilise the SocksRoute that has  been imported from
 app.use('/api/socks/', socksRoute);
 //to utilise the Userroute that has been imported
-app.use('/api/users/', userRoute);
+app.use('/api/user/', userRoute);
 
 app.listen(port, () => {
   console.log(`the server is listening on port: ${port}`);
