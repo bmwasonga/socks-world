@@ -6,6 +6,7 @@ import {
   AiFillDelete,
 } from 'react-icons/ai';
 import { addToCart, deleteFromCart } from '../../actions/cartActions';
+import Checkout from '../Checkout';
 
 export default function Cart() {
   const cartSate = useSelector((state) => state.cartReducer);
@@ -72,7 +73,7 @@ export default function Cart() {
         </div>
         <div className="col-md-4">
           <h4>SUBTOTAL : {grandTotal} Ksh</h4>
-          <button className="btn btn-primary">Pay now</button>
+          <Checkout grandTotal={grandTotal} />
         </div>
       </div>
     </div>
