@@ -1,8 +1,13 @@
+/* eslint-disable no-unused-vars */
 import Navbar from './components/Navbar';
-// eslint-disable-next-line no-unused-vars
-import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+//link and switch have not been used
 import HomePage from './components/Screens/HomePage';
+
 import Footer from './components/footer/Footer';
 import Cart from './components/Screens/Cart';
 import Login from './components/Screens/Login';

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllSocks } from '../../actions/socksActions';
+import Error from '../Error';
+import Loading from '../Loading';
 import Socks from '../Socks';
 //import socks from '../utils/SocksData';
 // the above line is mo longer needed as we are getting data from MongoDB
@@ -18,14 +20,14 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="row">
+      <div className="row justify-content-center">
         {/* conditional renderring to determine loading, data fetch success or fail 
               remeber to style the loading text at some point 
           */}
         {loading ? (
-          <h1>Loading... </h1>
+          <Loading />
         ) : error ? (
-          <h1>Something went wrong</h1>
+          <Error error="Something went wrong!!" />
         ) : (
           socks &&
           socks.map((sock) => {

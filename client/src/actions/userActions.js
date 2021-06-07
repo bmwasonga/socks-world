@@ -29,9 +29,10 @@ export const userLogin = (user) => async (dispatch) => {
 
 //the logout functionality is
 
-export const logoutUser = () => (dispatch) => {
+export const logOutUser = () => (dispatch) => {
   localStorage.removeItem('currentUser');
   window.location.href = '/login';
+  sessionStorage.clear();
 };
 
 //to get all the users that

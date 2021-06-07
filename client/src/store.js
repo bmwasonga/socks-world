@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { getAllSocksReducers } from '../src/reducers/socksReducers';
 import { cartReducer } from './reducers/cartReducers';
-import { registerUserReducer } from './reducers/userReducers';
+import { loginUserReducer, registerUserReducer } from './reducers/userReducers';
 
 const finalReducer = combineReducers({
   getAllSocksReducers: getAllSocksReducers,
@@ -13,6 +13,8 @@ const finalReducer = combineReducers({
   cartReducer: cartReducer,
   //registerd user reducers
   registerUserReducer: registerUserReducer,
+
+  loginUserReducer: loginUserReducer,
 });
 
 const middleware = [thunk];
@@ -22,9 +24,15 @@ const cartItems = sessionStorage.getItem('cartItems')
   ? JSON.parse(sessionStorage.getItem('cartItems'))
   : [];
 
+const currentUser = localStorage.getItem('currentUser')
+  ? JSON.parse(localStorage.getItem('currentUser'))
+  : null;
 const initialState = {
   cartReducer: {
     cartItems: cartItems,
+  },
+  loginUserReducer: {
+    currentUser: currentUser,
   },
 };
 
