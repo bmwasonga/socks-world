@@ -4,7 +4,7 @@ import { Form, Button } from 'react-bootstrap';
 export default function Login() {
   return (
     <div>
-      <div className="row justify-content-center">
+      <div className="row justify-content-center login">
         <div className="col-md-5">
           <Form className="shadow p-3 mb-5 bg-white rounded">
             <h3>Login</h3>
