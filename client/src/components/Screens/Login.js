@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogin } from '../../actions/userActions';
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const loginState = useSelector((state) => state.loginUserReducer);
+  //const { loading, error } = loginState;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (localStorage.getItem('currentUser')) {
+      window.location.href = '/';
+    }
+  }, []);
+
+  function login() {
+    const user = { email, password };
+    dispatch(userLogin(user));
+  }
+
   return (
     <div>
       <div className="row justify-content-center login">
@@ -12,17 +31,31 @@ export default function Login() {
 
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" onClick={login}>
               Login
             </Button>
             <br />
