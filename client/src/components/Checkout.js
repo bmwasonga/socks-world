@@ -14,8 +14,9 @@ export default function Checkout({ grandTotal }) {
   return (
     <div>
       <StripeCheckout
-        amount={grandTotal}
+        amount={grandTotal * 100}
         shippingAddress
+        currency="KES"
         token={tokenHandler}
         stripeKey="pk_test_51IzikQHuDLgQ4drvbo8APoISvagi1x4kieRfNx7gxVztmiTniEZ6HwHQI8zIKvNCeo8ICatQIIXRMj1r5a8Tv8r900jnJTwYmO"
       >

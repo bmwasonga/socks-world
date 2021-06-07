@@ -11,6 +11,8 @@ const socksRoute = require('./routes/socksRoute');
 //import the User of the socks as exported from the route folder
 const userRoute = require('./routes/userRoute');
 
+const orderRoute = require('./routes/ordersRoute');
+
 //rest of code
 const app = express();
 
@@ -24,6 +26,8 @@ app.get('/', (req, res) => {
 app.use('/api/socks/', socksRoute);
 //to utilise the Userroute that has been imported
 app.use('/api/user/', userRoute);
+
+app.use('/api/orders/', orderRoute);
 
 app.listen(port, () => {
   console.log(`the server is listening on port: ${port}`);
