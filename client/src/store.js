@@ -6,6 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { getAllSocksReducers } from '../src/reducers/socksReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { loginUserReducer, registerUserReducer } from './reducers/userReducers';
+import { placeOrderReducer } from './reducers/orderReducers';
 
 const finalReducer = combineReducers({
   getAllSocksReducers: getAllSocksReducers,
@@ -15,6 +16,8 @@ const finalReducer = combineReducers({
   registerUserReducer: registerUserReducer,
 
   loginUserReducer: loginUserReducer,
+
+  placeOrderReducer: placeOrderReducer,
 });
 
 const middleware = [thunk];
