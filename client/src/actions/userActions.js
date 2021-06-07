@@ -17,7 +17,7 @@ export const userLogin = (user) => async (dispatch) => {
   dispatch({ type: 'USER_LOGIN_REQUEST' });
 
   try {
-    const response = await axios.post('/api/users/login', user);
+    const response = await axios.post('/api/user/login', user);
     console.log(response);
     dispatch({ type: 'USER_LOGIN_SUCCESS', payload: response.data });
     localStorage.setItem('currentUser', JSON.stringify(response.data));
@@ -40,7 +40,7 @@ export const getAllUsers = () => async (dispatch) => {
   dispatch({ type: 'GET_USERS_REQUEST' });
 
   try {
-    const response = await axios.get('/api/users/getallusers');
+    const response = await axios.get('/api/user/getallusers');
     console.log(response);
     dispatch({ type: 'GET_USERS_SUCCESS', payload: response.data });
   } catch (error) {
@@ -52,7 +52,7 @@ export const getAllUsers = () => async (dispatch) => {
 
 export const deleteUser = (userId) => async (dispatch) => {
   try {
-    await axios.post('/api/users/deletesuer', { userId });
+    await axios.post('/api/user/deletesuer', { userId });
     alert('User has been deleted');
     window.location.reload();
   } catch (error) {

@@ -28,7 +28,7 @@ export default function Register() {
 
   return (
     <div>
-      <div className="row justify-content-center login">
+      <div className="row justify-content-center ">
         <div className="col-md-5">
           <Form className="shadow p-3 mb-5 bg-white rounded">
             <h3>Register</h3>

@@ -28,11 +28,3 @@ code {
   box-shadow: none !important;
   border-color: black;
 }
-
-.login {
-  background: #fcfcfc;
-  background: -webkit-linear-gradient(top left, #fcfcfc, #1064bb);
-  background: -moz-linear-gradient(top left, #fcfcfc, #1064bb);
-  background: linear-gradient(to bottom right, #fcfcfc, #1064bb);
-  height: 80vh;
-}
