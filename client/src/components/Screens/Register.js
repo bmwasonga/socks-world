@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../actions/userActions';
+import Error from '../Error';
+import Loading from '../Loading';
+import Success from '../Success';
 
 export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cpassword, setCpassword] = useState('');
+  const registerState = useSelector((state) => state.registerUserReducer);
+
+  const { error, loading, success } = registerState;
 
   const dispatch = useDispatch();
 
@@ -31,6 +37,9 @@ export default function Register() {
       <div className="row justify-content-center ">
         <div className="col-md-5">
           <Form className="shadow p-3 mb-5 bg-white rounded">
+            {loading && <Loading />}
+            {success && <Success success="User registration successful." />}
+            {error && <Error error="Email already registered." />}
             <h3>Register</h3>
             <hr />
             <Form.Group>
@@ -88,7 +97,7 @@ export default function Register() {
               />
             </Form.Group>
 
-            <Button variant="primary" onClick={register}>
+            <Button className="mb-3" variant="primary" onClick={register}>
               Register
             </Button>
             <br />
