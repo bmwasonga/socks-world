@@ -13,3 +13,24 @@ export const getAllSocks = () => async (dispatch) => {
     dispatch({ type: 'GET_SOCKS_FAILED', payload: error });
   }
 };
+
+export const filterSocks = (searchKey, category) => async (dispatch) => {
+  let filtredSocks;
+  dispatch({ type: 'GET_SOCKS_REQUEST' });
+
+  try {
+    const response = await axios.get('/api/socks/getallsocks');
+    filtredSocks = response.data.filter((socks) => {
+      return socks.name.toLowerCase().includes(searchKey);
+    });
+
+    if (category !== 'all') {
+      filtredSocks = response.data.filter((socks) => {
+        return socks.category.toLowerCase() === category;
+      });
+    }
+    dispatch({ type: 'GET_SOCKS_SUCCESS', payload: filtredSocks });
+  } catch (error) {
+    dispatch({ type: 'GET_SOCKS_FAILED', payload: error });
+  }
+};

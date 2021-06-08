@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart } from '../actions/cartActions';
 
 export default function Socks({ sock }) {
@@ -22,12 +22,17 @@ export default function Socks({ sock }) {
   return (
     <div
       style={{ padding: '40px' }}
-      className="shadow p-5 mb-5 bg-white rounded "
+      className="shadow p-5 mb-8 bg-white rounded"
     >
       {/* add a hover option to increase the intensity of the shadow on hover*/}
       <div onClick={handleShow}>
-        <h3>{sock.name}</h3>
-        <img src={sock.image} alt={sock.name} className="img-fluid" />
+        <h5>{sock.name}</h5>
+        <img
+          src={sock.image}
+          alt={sock.name}
+          style={{ width: '200px', height: '200px' }}
+          className="img-fluid "
+        />
       </div>
       <div className="flex-container">
         <div className="w-100 m-1">

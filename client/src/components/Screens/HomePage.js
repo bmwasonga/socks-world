@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllSocks } from '../../actions/socksActions';
 import Error from '../Error';
+import Filter from '../Filter';
 import Loading from '../Loading';
 import Socks from '../Socks';
 //import socks from '../utils/SocksData';
@@ -20,6 +21,7 @@ export default function HomePage() {
 
   return (
     <>
+      <Filter />
       <div className="row justify-content-center">
         {/* conditional renderring to determine loading, data fetch success or fail 
               remeber to style the loading text at some point 
