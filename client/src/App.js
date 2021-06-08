@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer';
 import Cart from './components/Screens/Cart';
 import Login from './components/Screens/Login';
 import Register from './components/Screens/Register';
+import Orders from './components/Screens/Orders';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/cart" exact component={Cart} />
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
+        <Route path="/orders" exact component={Orders} />
       </Router>
       <Footer />
     </div>

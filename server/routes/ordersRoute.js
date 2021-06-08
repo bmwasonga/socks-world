@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 const stripe = require('stripe')(
   'sk_test_51IzikQHuDLgQ4drvXEHjyu6MvwPxkhRTVMUbsimQ7voi5YV5t53Xayr0rZDjPvpofI0iGfR04b5CNIuVqWufr35r00MVXc86qI'
 );
-
+const Order = require('../model/orderModel');
 router.post('/placeorder', async (req, res) => {
   const { token, grandTotal, currentUser, cartItems } = req.body;
 
@@ -26,12 +26,38 @@ router.post('/placeorder', async (req, res) => {
     );
 
     if (payment) {
+      const newOrder = new Order({
+        name: currentUser.name,
+        email: currentUser.email,
+        userId: currentUser._id,
+        orderItems: cartItems,
+        orderAmount: grandTotal,
+        shippingAddress: {
+          street: token.card.address_line1,
+          city: token.card.address_city,
+          country: token.card.address_country,
+          postcode: token.address_zip,
+        },
+        transactionID: payment.source.id,
+      });
+
+      newOrder.save();
       res.send('Pay has been made successfully');
     } else {
       res.send('Paymment has failed');
     }
   } catch (error) {
     res.status(400).json({ message: 'something went wrong' + error });
+  }
+});
+
+router.post('/getuserorders', async (req, res) => {
+  const { userId } = req.body;
+  res.send(orders);
+  try {
+    const orders = await Order.find({ userId: userId });
+  } catch (error) {
+    res.status(404).json({ message: 'something went wrong' + error });
   }
 });
 

@@ -21,3 +21,19 @@ export const placeOrder = (token, grandTotal) => async (dispatch, getState) => {
     console.log(error);
   }
 };
+
+export const getUserOrders = () => async (dispatch, getState) => {
+  const currentUser = getState().loginUserReducer.currentState;
+
+  dispatch({ type: 'GET_USER_ORDERS_REQUEST' });
+
+  try {
+    const response = await axios.post('api/orders/getuserorders', {
+      userId: currentUser._id,
+    });
+    console.log(response);
+    dispatch({ type: 'GET_USER_ORDERS_SUCCESS', payload: response.data });
+  } catch (error) {
+    dispatch({ type: 'GET_USER_ORDERS_FAILED', payload: error });
+  }
+};
