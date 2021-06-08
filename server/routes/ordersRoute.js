@@ -53,9 +53,9 @@ router.post('/placeorder', async (req, res) => {
 
 router.post('/getuserorders', async (req, res) => {
   const { userId } = req.body;
-  res.send(orders);
   try {
-    const orders = await Order.find({ userId: userId });
+    const orders = await Order.find({ userId: userId }).sort({ _id: -1 });
+    res.send(orders);
   } catch (error) {
     res.status(404).json({ message: 'something went wrong' + error });
   }
