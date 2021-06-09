@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { getAllSocks } from '../../actions/socksActions';
@@ -38,7 +38,6 @@ export default function HomePage() {
               <div
                 className="col-md-2 d-flex justify-content-center"
                 key={sock._id}
-                id={sock._id}
               >
                 <div className="m-3">
                   <Socks sock={sock} />

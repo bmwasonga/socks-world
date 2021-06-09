@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import AddSock from '../Admin/AddSock';
 import OrderList from '../Admin/OrderList';
 import SocksList from '../Admin/SocksList';

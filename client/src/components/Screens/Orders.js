@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserOrders } from '../../actions/orderActions';
-import Success from '../Success';
 import Error from '../Error';
 import Loading from '../Loading';
 
@@ -9,7 +8,7 @@ export default function Orders() {
   const dispatch = useDispatch();
   const ordersState = useSelector((state) => state.getUserOrdersReducer);
 
-  const { orders, error, loading, success } = ordersState;
+  const { orders, error, loading } = ordersState;
 
   useEffect(() => {
     dispatch(getUserOrders());

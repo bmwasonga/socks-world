@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AiFillDelete } from 'react-icons/ai';
 
 import { deleteUser, getAllUsers } from '../../actions/userActions';
-import { getAllUsersReducer } from '../../reducers/userReducers';
 
 import Error from '../Error';
 import Loading from '../Loading';

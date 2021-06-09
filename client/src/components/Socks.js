@@ -45,8 +45,12 @@ export default function Socks({ sock }) {
               setSize(e.target.value);
             }}
           >
-            {sock.sizes.map((size) => {
-              return <option value={size}>{size}</option>;
+            {sock.sizes.map((siz, i) => {
+              return (
+                <option key={i} value={size}>
+                  {size}
+                </option>
+              );
             })}
           </select>
         </div>
@@ -59,8 +63,12 @@ export default function Socks({ sock }) {
               setQuantity(e.target.value);
             }}
           >
-            {[...Array(10).keys()].map((a, i) => {
-              return <option value={i + 1}>{i + 1}</option>;
+            {[...Array(10).keys()].map((i, a) => {
+              return (
+                <option key={i} value={i + 1}>
+                  {i + 1}
+                </option>
+              );
             })}
           </select>
         </div>
