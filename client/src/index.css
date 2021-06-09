@@ -28,3 +28,19 @@ code {
   box-shadow: none !important;
   border-color: black;
 }
+
+.adminfunctions {
+  padding: 10px;
+  background-color: rgb(54, 49, 49);
+  display: flex !important;
+  justify-content: center !important;
+}
+.adminfunctions li {
+  list-style-type: none !important;
+  display: inline;
+}
+
+.adminfunctions li a {
+  color: white !important;
+  padding: 20px;
+}

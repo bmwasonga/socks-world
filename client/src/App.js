@@ -13,6 +13,7 @@ import Cart from './components/Screens/Cart';
 import Login from './components/Screens/Login';
 import Register from './components/Screens/Register';
 import Orders from './components/Screens/Orders';
+import Admin from './components/Screens/Admin';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
         <Route path="/orders" exact component={Orders} />
+        <Route path="/admin" component={Admin} />
       </Router>
       <Footer />
     </div>

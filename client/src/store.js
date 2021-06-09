@@ -3,12 +3,20 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { getAllSocksReducers } from '../src/reducers/socksReducers';
+import {
+  addSockReducer,
+  getAllSocksReducers,
+} from '../src/reducers/socksReducers';
 import { cartReducer } from './reducers/cartReducers';
-import { loginUserReducer, registerUserReducer } from './reducers/userReducers';
+import {
+  getAllUsersReducer,
+  loginUserReducer,
+  registerUserReducer,
+} from './reducers/userReducers';
 import {
   placeOrderReducer,
   getUserOrdersReducer,
+  getAllOrdersReducer,
 } from './reducers/orderReducers';
 
 const finalReducer = combineReducers({
@@ -23,6 +31,12 @@ const finalReducer = combineReducers({
   placeOrderReducer: placeOrderReducer,
 
   getUserOrdersReducer: getUserOrdersReducer,
+
+  addSockReducer: addSockReducer,
+
+  getAllOrdersReducer: getAllOrdersReducer,
+
+  getAllUsersReducer: getAllUsersReducer,
 });
 
 const middleware = [thunk];

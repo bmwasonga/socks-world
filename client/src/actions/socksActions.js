@@ -34,3 +34,14 @@ export const filterSocks = (searchKey, category) => async (dispatch) => {
     dispatch({ type: 'GET_SOCKS_FAILED', payload: error });
   }
 };
+
+export const addSock = (sock) => async (dispatch) => {
+  dispatch({ type: 'ADD_SOCK_REQUEST' });
+
+  try {
+    const response = await axios.post('/api/socks/addsock', { sock });
+    dispatch({ type: 'ADD_SOCK_SUCCESS' });
+  } catch (error) {
+    dispatch({ type: 'ADD_SOCK_FAILED', payload: error });
+  }
+};

@@ -26,4 +26,25 @@ export const getAllSocksReducers = (
   }
 };
 
-//the error page is still serving data. Correct that
+export const addSockReducer = (state = { socks: [] }, action) => {
+  switch (action.type) {
+    case 'ADD_SOCK_REQUEST':
+      return {
+        ...state,
+        loading: true,
+      };
+    case 'ADD_SOCK_SUCESS':
+      return {
+        loading: false,
+        success: true,
+      };
+    case 'ADD_SOCK_FAILED':
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
