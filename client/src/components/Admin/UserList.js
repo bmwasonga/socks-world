@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiFillDelete } from 'react-icons/ai';
 
-import { getAllUsers } from '../../actions/userActions';
+import { deleteUser, getAllUsers } from '../../actions/userActions';
 import { getAllUsersReducer } from '../../reducers/userReducers';
 
 import Error from '../Error';
@@ -44,7 +44,12 @@ export default function UserList() {
                   <td>{user.name}</td>
                   <td>{user.createdAt}</td>
                   <td>
-                    <AiFillDelete style={{ color: 'red' }} />
+                    <AiFillDelete
+                      style={{ color: 'red' }}
+                      onClick={() => {
+                        dispatch(deleteUser(user._id));
+                      }}
+                    />
                   </td>
                 </tr>
               );

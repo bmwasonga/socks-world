@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { getAllSocks } from '../../actions/socksActions';
 import Error from '../Error';
 import Filter from '../Filter';
@@ -35,7 +36,7 @@ export default function HomePage() {
           socks.map((sock) => {
             return (
               <div
-                className="col-md-4 d-flex justify-content-center"
+                className="col-md-2 d-flex justify-content-center"
                 key={sock._id}
                 id={sock._id}
               >

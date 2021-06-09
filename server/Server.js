@@ -2,6 +2,7 @@ const express = require('express');
 var db = require('./db'); //this imports the entry point of the Mongodb connection
 
 const port = process.env.PORT || 5000;
+const path = require('path');
 
 //using the model that we have created above
 const Socks = require('./model/socksModel');
@@ -18,9 +19,12 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.status(200).send('<h1>The server is running </h1>');
-});
+if (process.env.NODE_ENV == 'production') {
+  app.use('/', express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '/client/build/index.html'));
+  });
+}
 
 //to utilise the SocksRoute that has  been imported from
 app.use('/api/socks/', socksRoute);

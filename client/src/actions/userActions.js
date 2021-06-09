@@ -53,7 +53,7 @@ export const getAllUsers = () => async (dispatch) => {
 
 export const deleteUser = (userId) => async (dispatch) => {
   try {
-    await axios.post('/api/user/deletesuer', { userId });
+    await axios.post('/api/user/deleteuser', { userId });
     alert('User has been deleted');
     window.location.reload();
   } catch (error) {

@@ -5,10 +5,14 @@ import {
   AiOutlineMinusCircle,
   AiFillDelete,
 } from 'react-icons/ai';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { addToCart, deleteFromCart } from '../../actions/cartActions';
 import Checkout from '../Checkout';
 
 export default function Cart() {
+  AOS.init();
+
   const cartSate = useSelector((state) => state.cartReducer);
   const cartItems = cartSate.cartItems;
   //to calculate the grand total of the items in the cart
@@ -18,7 +22,7 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div data-aos="flip-right">
       <div className="row justify-content-center">
         <div className="col-md-6">
           <h2> My cart</h2>

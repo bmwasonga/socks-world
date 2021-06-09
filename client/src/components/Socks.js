@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { addToCart } from '../actions/cartActions';
 
 export default function Socks({ sock }) {
+  AOS.init();
+
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState('small');
   //useEffect for the Modal
@@ -20,10 +24,7 @@ export default function Socks({ sock }) {
     // the params in the same order from the Add to Cart function in the cart actions
   }
   return (
-    <div
-      style={{ padding: '40px' }}
-      className="shadow p-5 mb-8 bg-white rounded"
-    >
+    <div data-aos="fade-down-left" className="shadow p-5 mb-8 bg-white rounded">
       {/* add a hover option to increase the intensity of the shadow on hover*/}
       <div onClick={handleShow}>
         <h5>{sock.name}</h5>
