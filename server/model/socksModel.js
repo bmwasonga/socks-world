@@ -14,9 +14,6 @@ const socksSchema = mongoose.Schema(
   }
 );
 
-//the schema above describes how the data is defined by mongo
-//I am pretty sure that will dictate how it extracts the same data from the clusters
-
 const socksModal = mongoose.model('socks', socksSchema);
 
 //socks is the name of the collection we get the data from

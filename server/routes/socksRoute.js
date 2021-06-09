@@ -12,4 +12,26 @@ router.get('/getallsocks', async (req, res) => {
   }
 });
 
+router.post('/addsock', async (req, res) => {
+  const sock = req.body.sock;
+
+  console.log('the recieved data is ' + sock);
+
+  const newSock = new Socks({
+    name: sock.name,
+    image: sock.image,
+    description: sock.description,
+    category: sock.category,
+    prices: [sock.prices],
+    sizes: ['small', 'medium'],
+  });
+
+  await newSock.save();
+  res.send('new sock saved successfully');
+  try {
+  } catch (error) {
+    return res.status(400).json({ message: 'something went wrong' });
+  }
+});
+
 module.exports = router;
