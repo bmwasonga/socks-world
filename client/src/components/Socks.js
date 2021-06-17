@@ -63,7 +63,7 @@ export default function Socks({ sock }) {
               setQuantity(e.target.value);
             }}
           >
-            {[...Array(10).keys()].map((i, a) => {
+            {[...Array(10).keys()].map((i) => {
               return (
                 <option key={i} value={i + 1}>
                   {i + 1}
