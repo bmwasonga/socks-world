@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Switch, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import AddSock from '../Admin/AddSock';
 import OrderList from '../Admin/OrderList';
 import SocksList from '../Admin/SocksList';
@@ -41,14 +41,14 @@ export default function Admin() {
             </li>
           </ul>
 
-          <Switch>
-            <Route path="/admin" component={UserList} exact />
+          <Routes>
+            <Route path="/admin" element={<UserList />} />
 
-            <Route path="/admin/userlist" component={UserList} exact />
-            <Route path="/admin/socklist" component={SocksList} exact />
-            <Route path="/admin/addsock" component={AddSock} exact />
-            <Route path="/admin/orderlist" component={OrderList} exact />
-          </Switch>
+            <Route path="/admin/userlist" element={<UserList />} />
+            <Route path="/admin/socklist" element={<SocksList />} />
+            <Route path="/admin/addsock" element={<AddSock />} />
+            <Route path="/admin/orderlist" element={<OrderList />} />
+          </Routes>
         </div>
       </div>
     </div>

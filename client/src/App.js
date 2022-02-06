@@ -4,8 +4,7 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-//link and switch have not been used
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './components/Screens/HomePage';
 
 import Footer from './components/footer/Footer';
@@ -20,14 +19,16 @@ function App() {
     <div className="App">
       <Navbar />
 
-      <Router>
-        <Route path="/" exact component={HomePage} />
-        <Route path="/cart" exact component={Cart} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/register" exact component={Register} />
-        <Route path="/orders" exact component={Orders} />
-        <Route path="/admin" component={Admin} />
-      </Router>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
     </div>
   );
