@@ -4,8 +4,8 @@
   "description": "this is the Server side of the application",
   "main": "Server.js",
   "engines": {
-    "node": "14.17.0",
-    "npm": "7.17.0"
+    "node": "16.13.0",
+    "npm": "8.1.3"
   },
   "scripts": {
     "client-install": "npm install --prefix client",
