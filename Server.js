@@ -19,12 +19,14 @@ app.use('/api/user/', userRoute);
 app.use('/api/orders/', orderRoute);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use('/', express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client/build/index.html'));
-  });
+	app.use('/', express.static('client/build'));
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'client/build/index.html'));
+	});
 }
 
+// a random comment
+
 app.listen(port, () => {
-  console.log(`the server is listening on port: ${port}`);
+	console.log(`the server is listening on port: ${port}`);
 });
