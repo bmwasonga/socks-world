@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "server works",
   "version": "1.0.0",
   "description": "this is the Server side of the application",
   "main": "Server.js",
